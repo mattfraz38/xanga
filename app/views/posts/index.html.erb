@@ -1,0 +1,12 @@
+<h1>All Posts</h1>
+
+<ol>
+  <% @posts.each do |p| %>
+      <li>
+        <p><%= p.title %></p>
+        <small><%= p.user.email %></small>
+      </li>
+  <% end %>
+</ol>
+
+<%= link_to 'New Post', new_post_path %>
