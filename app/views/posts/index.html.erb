@@ -1,10 +1,10 @@
 <h1>All Posts</h1>
 
 <ol>
-  <% @posts.each do |p| %>
+  <% @posts.each do |post| %>
       <li>
-        <p><%= p.title %></p>
-        <small><%= p.user.email %></small>
+        <p><%= link_to post.title, post_path(post) %></p>
+        <small><%= post.user.email.split('@')[0] %></small>
       </li>
   <% end %>
 </ol>
