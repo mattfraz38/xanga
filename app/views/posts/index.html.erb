@@ -4,7 +4,7 @@
   <% @posts.each do |post| %>
       <li>
         <p><%= link_to post.title, post_path(post) %></p>
-        <small><%= post.user.email.split('@')[0] %></small>
+        <small><%= link_to post.user.username, user_path(post) %></small>
       </li>
   <% end %>
 </ol>

@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
-<small><%= @post.user.email.split('@')[0] %></small>
+<small><%= link_to @post.user.username, user_path(@post) %></small>
 
 <%= link_to 'All Posts', posts_path %>
