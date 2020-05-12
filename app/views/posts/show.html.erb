@@ -1,5 +1,8 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
-<small><%= link_to @post.user.username, user_path(@post) %></small>
+<small><%= link_to @post.user.username, users_path(@post) %></small>
 
+<% if @post.user == current_user %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
 <%= link_to 'All Posts', posts_path %>

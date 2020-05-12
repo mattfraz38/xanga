@@ -4,10 +4,13 @@
 <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
 <p><%= link_to 'All Users', users_path %></p>
 <p><%= link_to 'All Posts', posts_path %></p>
-<p><%= link_to 'New Post', new_post_path %></p>
+
+<% if @user == current_user %>
+  <p><%= link_to 'New Post', new_post_path %></p>
+<% end %>
 
 <ol>
-  <%= @user.posts.each do |post| %>
+  <% @user.posts.each do |post| %>
     <li>
       <%= link_to post.title, post_path(post) %>
     </li>
