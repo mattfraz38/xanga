@@ -28,6 +28,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    # // TODO:
+    # redirect to posts index if deleting from index,
+    # users show if from post show
+    redirect_to users_path(@user)
+  end
+
   private
 
   def find_post
